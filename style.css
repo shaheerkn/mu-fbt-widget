@@ -31,6 +31,7 @@
   --mu-products-gap: 15px;
   --mu-gap-between-products-and-summary: 20px;
   --mu-list-gap: 12px;
+  --mu-title-margin-bottom: 8px;
 
   /* Product */
   --mu-product-image-radius: 8px;
@@ -76,7 +77,7 @@
   font-size: var(--mu-title-font-size);
   color: var(--mu-color-title);
   font-weight: var(--mu-title-font-weight);
-  margin-bottom: 8px;
+  margin-bottom: var(--mu-title-margin-bottom);
 }
 
 .mu-subtitle {
