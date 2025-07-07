@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Tenor+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
 :root {
   /* Colors */
@@ -14,7 +14,7 @@
   --mu-color-summary-header: #222;
 
   /* Font */
-  --mu-font-family: "Tenor Sans", sans-serif;
+  --mu-font-family: "Inter", sans-serif;
   --mu-font-size-base: 16px;
   --mu-title-font-size: 24px;
   --mu-title-font-weight: 400;
@@ -24,6 +24,7 @@
   --mu-original-price-font-size: 16px;
   --mu-original-price-font-weight: 400;
   --mu-select-font-size: 14px;
+  --mu-current-price-font-weight: 600;
 
   /* Spacing & Sizing */
   --mu-padding: 10px;
@@ -34,6 +35,8 @@
   --mu-list-gap: 12px;
   --mu-title-margin-bottom: 8px;
   --mu-select-padding: 5px 10px;
+  --mu-price-gap: 10px;
+  --mu-total-row-margin-bottom: 8px;
 
   /* Product */
   --mu-product-image-radius: 8px;
@@ -53,11 +56,11 @@
   --mu-atc-text-transform: uppercase;
 
   /* Checkbox */
-  --mu-checkbox-size: 20px;
-  --mu-checkbox-radius: 5px;
+  --mu-checkbox-size: 15px;
+  --mu-checkbox-radius: 3px;
   --mu-checkbox-border-color: #000;
   --mu-disable-item-text-decoration: none;
-  --mu-checkbox-icon-size: 12px;
+  --mu-checkbox-icon-size: 10px;
 }
 
 @media (min-width: 768px) {
@@ -126,11 +129,6 @@
   height: 100%;
   object-fit: var(--mu-product-image-object-fit);
   object-position: center;
-  transition: transform .25s linear;
-}
-
-.mu-fbt-product:hover .mu-product-img {
-  transform: scale(1.1);
 }
 
 .mu-fbt-product--scale {
@@ -148,7 +146,6 @@
 .mu-fbt-plus {
   font-size: var(--mu-plus-size);
   color: var(--mu-color-plus);
-  font-weight: bold;
   transition: opacity .25s linear, width .25s linear, height .25s linear, overflow .25s linear, pointer-events .25s linear;
 }
 
@@ -185,8 +182,8 @@
 .mu-fbt-total-row {
   display: flex;
   align-items: baseline;
-  gap: 10px;
-  margin-bottom: 8px;
+  gap: var(--mu-price-gap);
+  margin-bottom: var(--mu-total-row-margin-bottom);
 }
 
 .mu-fbt-total-price {
@@ -229,10 +226,6 @@
   align-items: center;
   gap: 12px;
   flex-wrap: wrap;
-  padding: 0;
-  background: none;
-  border-radius: 0;
-  box-shadow: none;
 }
 
 .mu-fbt-list-item:not(:has(input:checked)) {
@@ -265,7 +258,7 @@
 .mu-checkbox + label svg {
   width: var(--mu-checkbox-icon-size);
   height: var(--mu-checkbox-icon-size);
-  fill: whitesmoke;
+  color: whitesmoke;
   pointer-events: none;
   transition: transform .25s linear;
   transform: scale(0);
@@ -295,14 +288,21 @@
   padding-right: 30px;
 }
 
+.mu-fbt-list-price-row {
+  display: flex;
+  align-items: center;
+  gap: var(--mu-price-gap);
+}
+
 .mu-fbt-list-current-price {
+  font-weight: var(--mu-current-price-font-weight);
   font-size: var(--mu-font-size-base);
-  font-weight: bold;
   color: var(--mu-color-title);
 }
 
 .mu-fbt-list-original-price {
   color: var(--mu-color-list-original-price);
   text-decoration: line-through;
+  font-weight: var(--mu-original-price-font-weight);
 }
 
