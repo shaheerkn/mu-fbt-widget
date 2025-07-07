@@ -60,7 +60,7 @@
   --mu-checkbox-radius: 3px;
   --mu-checkbox-border-color: #000;
   --mu-disable-item-text-decoration: none;
-  --mu-checkbox-icon-size: 10px;
+  --mu-checkbox-icon-size: 20px;
 }
 
 @media (min-width: 768px) {
@@ -118,7 +118,6 @@
   width: var(--mu-product-image-size);
   background: var(--mu-color-product-background);
   border-radius: var(--mu-product-image-radius);
-  transition: transform .25s linear, width .25s linear, height .25s linear, margin .25s linear, opacity .25s linear;
   width: var(--mu-product-image-width);
   height: var(--mu-product-image-height);
   overflow: hidden;
@@ -131,40 +130,9 @@
   object-position: center;
 }
 
-.mu-fbt-product--scale {
-  transform: scale(0);
-  width: 0;
-  height: 0;
-  overflow: hidden;
-  pointer-events: none;
-}
-
-.hidden {
-  display: none;
-}
-
 .mu-fbt-plus {
   font-size: var(--mu-plus-size);
   color: var(--mu-color-plus);
-  transition: opacity .25s linear, width .25s linear, height .25s linear, overflow .25s linear, pointer-events .25s linear;
-}
-
-.mu-fbt-product.mu-fbt-product--scale + .mu-fbt-plus,
-.mu-fbt-plus:has(+ .mu-fbt-product.mu-fbt-product--scale):not(:has(~ .mu-fbt-product:not(.mu-fbt-product--scale))) {
-  transform: scale(0);
-  opacity: 0;
-  width: 0;
-  height: 0;
-  overflow: hidden;
-  pointer-events: none;
-}
-
-.mu-fbt-product.hidden + .mu-fbt-plus {
-  display: none;
-}
-
-.mu-fbt-plus:has(+ .mu-fbt-product.hidden):not(:has(~ .mu-fbt-product:not(.hidden))) {
-  display: none;
 }
 
 .mu-fbt-summary {

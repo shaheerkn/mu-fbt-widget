@@ -178,35 +178,5 @@
       </div>
     </div>
   </div>
-
-  <script>
-    const checkboxes = document.querySelectorAll('.mu-fbt-list-item input');
-    const products = document.querySelectorAll('.mu-fbt-product');
-
-    checkboxes.forEach((checkbox, index) => {
-      checkbox.addEventListener('change', () => {
-        const product = products[index];
-
-        if (!checkbox.checked) {
-          // Animate out
-          product.classList.add('mu-fbt-product--scale');
-
-          // Wait for transition to finish then fully hide
-          product.addEventListener('transitionend', () => {
-            product.classList.add('hidden');
-          }, { once: true });
-
-        } else {
-          // Show again
-          product.classList.remove('hidden');
-
-          // Force reflow to restart transition
-          void product.offsetWidth;
-
-          product.classList.remove('mu-fbt-product--scale');
-        }
-      });
-    });
-  </script>
 </body>
 </html> 
