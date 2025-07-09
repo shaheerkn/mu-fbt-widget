@@ -116,9 +116,7 @@
 }
 
 .mu-fbt-products {
-  width: calc(100% + var(--mu-padding-inline));
-  margin-right: calc(var(--mu-padding-inline) * -1);
-  padding-right: var(--mu-padding-inline);
+  width: 100%;
   gap: var(--mu-products-gap);
   display: flex;
   align-items: center;
@@ -131,11 +129,9 @@
 @media (min-width: 1024px) {
   .mu-fbt-products {
     width: 100%;
-    padding-right: 0;
     max-width: 72%;
   }
 }
-
 
 .mu-fbt-products::-webkit-scrollbar-track {
   background-color: var(--mu-scrollbar-track-color);
@@ -148,7 +144,6 @@
 
 .mu-fbt-products::-webkit-scrollbar {
   height: 2px;
-
 }
 
 .mu-fbt-product {
