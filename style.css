@@ -13,6 +13,8 @@
   --mu-color-atc-text: #fff;
   --mu-color-summary-header: #222;
   --mu-checkbox-border-color: #000;
+  --mu-scrollbar-thumb-color: #27292c;
+  --mu-scrollbar-track-color: #f5f5f5;
 
   /* Font */
   --mu-font-family: "Inter", sans-serif;
@@ -123,6 +125,7 @@
   overflow: auto;
   position: relative;
   border-radius: var(--mu-product-image-radius);
+  padding-bottom: 20px;
 }
 
 @media (min-width: 1024px) {
@@ -133,8 +136,19 @@
   }
 }
 
+
+.mu-fbt-products::-webkit-scrollbar-track {
+  background-color: var(--mu-scrollbar-track-color);
+}
+
+.mu-fbt-products::-webkit-scrollbar-thumb {
+  background: var(--mu-scrollbar-thumb-color);
+  border-radius: 9px;
+}
+
 .mu-fbt-products::-webkit-scrollbar {
-  display: none;
+  height: 2px;
+
 }
 
 .mu-fbt-product {
@@ -216,7 +230,7 @@
 .mu-fbt-list-item {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 6px 12px;
   flex-wrap: wrap;
   position: relative;
 }
